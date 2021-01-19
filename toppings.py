@@ -161,3 +161,141 @@ if "apple" in favouriteFruits:
     print("Delicious!")
 if "pear" in favouriteFruits:
     print("Delicious!")
+    
+    
+# Checking for special items
+requestedToppings = ['mushrooms', 'green peppers', 'extra cheese']
+
+# The below is a simple loop to print out the requested toppings
+for requestedTopping in requestedToppings:
+    print(f"Adding {requestedTopping}.")
+
+print("\nFinished making your pizza!\n")
+
+# What happens if we run out of green peppers?
+for requestedTopping in requestedToppings:
+    # Here we added a check to see if we had a topping before printed out that we are adding the topping.
+    # Because we are out of green peppers, we print we don't have any.
+    if requestedTopping == "green peppers":
+        print("Sorry, we are out of green peppers right now.")
+    else:
+        print(f"Adding {requestedTopping}.")
+
+print("\nFinished making your pizza!")
+
+# Checking that a list is not empty
+requestedToppings = []
+
+# Instead of jumping right into a for loop, we do a quick check below. If the list is empty the if requestedToppings will be false which will trigger the else block. If there was something in the list, it'd continue like normal.
+if requestedToppings:
+    for requestedTopping in requestedToppings:
+        print(f"Adding {requestedTopping}.")
+    print("\nFinished making your pizza!")
+else:
+    print("Are you sure you want a plain pizza")
+
+# Using multiple lists
+# For this example we want to check each item in requestedToppings against the list of available toppings before it's added to the pizza.
+availableToppings = ['mushrooms', 'olives', 'green peppers', 'pepperoni', 'pineapple', 'extra cheese']
+requestedToppings = ['mushrooms', 'french fries', 'extra cheese']
+
+# We loop through the request toppings so we have access to each topping individually
+for requestedTopping in requestedToppings:
+    # We check if that individual topping is within the list of avail toppings
+    if requestedTopping in availableToppings:
+        # If it is, print the below
+        print(f"Adding {requestedTopping}.")
+    else:
+        # If not, print below
+        print(f"Sorry, we don't have {requestedTopping}.")
+        
+print("\nFinished making your pizza!")
+
+# 5-8. Hello Admin: Make a list of five or more usernames, including the name
+# 'admin'. Imagine you are writing code that will print a greeting to each user
+# after they log in to a website. Loop through the list, and print a greeting to
+# each user:
+
+names = ["billy", "bob", "celine", "eddy", "john", "admin"]
+
+# • If the username is 'admin', print a special greeting, such as Hello admin,
+# would you like to see a status report?
+# • Otherwise, print a generic greeting, such as Hello Jaden, thank you for
+# logging in again.
+
+for name in names:
+    if name == "admin":
+        print(f"Hello {name.title()}, would you like to see a status report?")
+    else:
+        print(f"Hello {name.title()}, thank you for logging in again.")
+
+# 5-9. No Users: Add an if test to hello_admin.py to make sure the list of users is
+# not empty.
+# • If the list is empty, print the message We need to find some users!
+# • Remove all of the usernames from your list, and make sure the correct
+# message is printed.
+
+names = []
+
+if names:
+    for name in names:
+        if name == "admin":
+            print(f"Hello {name.title()}, would you like to see a status report?")
+        else:
+            print(f"Hello {name.title()}, thank you for logging in again.")
+else:
+    print("We need to find some users!")
+
+
+
+# 5-10. Checking Usernames: Do the following to create a program that simulates
+# how websites ensure that everyone has a unique username.
+# • Make a list of five or more usernames called current_users.
+# • Make another list of five usernames called new_users. Make sure one or
+# two of the new usernames are also in the current_users list.
+# • Loop through the new_users list to see if each new username has already
+# been used. If it has, print a message that the person will need to enter a
+# new username. If a username has not been used, print a message saying
+# that the username is available.
+# • Make sure your comparison is case insensitive. If 'John' has been used,
+# 'JOHN' should not be accepted. (To do this, you’ll need to make a copy of
+# current_users containing the lowercase versions of all existing users.)
+
+currentUsers = ["billy", "bob", "celine", "eddy", "john"]
+newUsers = ["shane", "shawn", "Bob", "scooter", "Celine"]
+
+for newUser in newUsers:
+    if newUser.lower() in currentUsers:
+        print("That username is already taken, please enter a new username")
+    else:
+        print("That user name is available")
+
+# 5-11. Ordinal Numbers: Ordinal numbers indicate their position in a list, such
+# as 1st or 2nd. Most ordinal numbers end in th, except 1, 2, and 3.
+# • Store the numbers 1 through 9 in a list.
+# • Loop through the list.
+# • Use an if-elif-else chain inside the loop to print the proper ordinal ending
+# for each number. Your output should read "1st 2nd 3rd 4th 5th 6th
+# 7th 8th 9th", and each result should be on a separate line.
+
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+for number in numbers:
+    if number == 1:
+        print("1st")
+    if number == 2:
+        print("2nd")
+    if number == 3:
+        print("3rd")
+    if number == 4:
+        print("4th")
+    if number == 5:
+        print("5th")
+    if number == 6:
+        print("6th")
+    if number == 7:
+        print("7th")
+    if number == 8:
+        print("8th")
+    if number == 9:
+        print("9th")
